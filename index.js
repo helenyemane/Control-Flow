@@ -1,10 +1,10 @@
 //1
 function checkLogin() {
-    let loginTrial = 0
-    const totalTrials = 3
+    let loginTrial = 0;
+    const totalTrials = 3;
 
     while (loginTrial < totalTrials) {
-        loginTrial++
+        loginTrial++;
 
         console.log(`Login attempt ${loginTrial} failed`)
     }
@@ -158,30 +158,27 @@ registration(userNames)
 
 //8
 
-function testRetake() {
-
-
-    do {
-        console.log(`attempt ${attempt}: ${result}`)
-        result += 10
-        attempt++;
-    }
-
-    while (result < 50)
-    if (result >= 50) {
-        console.log("Student passed the test")
-    }
-}
-let result = 20
-let attempt = 1
-testRetake()
-
-
-
-
-
-
-
+function testRetake(studentResults) {
+    studentResults.forEach(studentResult=>{
+        let attempt=1;
+        let score=studentResult.score;
+        if (score >= 50) {
+            console.log(`${studentResult.name} has already passed the test`)
+        }else{
+            do {
+                console.log(`student name : ${studentResult.name} , attempt ${attempt}: ${score}`)
+                score+= 10;
+                attempt++;
+            }
+        
+            while (score < 50);
+            console.log(`${studentResult.name}, your score is ${score} now. So you have passed.`)
+        };
+    
+    });
+};
+let studentResults= [{"name":"Tirsit","score":24},{"name":"Fana","score":5},{"name":"Arsema","score":56},{"name":"Semhal","score":2}];
+testRetake(studentResults);
 
 
 
