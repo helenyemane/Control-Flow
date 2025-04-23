@@ -21,17 +21,17 @@ checkLogin()
 //2
 
 function votingProcess(votes) {
-    let i = 0
 
+    let i = 0
     do {
         console.log(`vote processed: ${votes[i]}`)
-        i++
+        i++;
     }
 
     while (i < votes.length)
 }
 
-console.log(votingProcess(["yes", "yes", "no", "no", "refrain"]))
+votingProcess(["yes", "yes", "no", "no", "refrain"])
 
 
 
